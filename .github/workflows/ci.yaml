@@ -16,8 +16,11 @@ jobs:
           node-version: 18
 
       - run: npm install
-      - run: npm run build
-      - run: npm start &
 
+      - run: npm run build
+
+      - run: npm start &
+      
       - run: npx wait-on http://localhost:3000
+
       - run: npx cypress run
